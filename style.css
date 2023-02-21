@@ -92,6 +92,9 @@ body{
 .calc-button:active{
     background-color: #fa0000;
 }
+.calc-button:last-child:active{
+    background-color: #fa0000;
+}
 .double{
     flex-basis: 47%;
 }
