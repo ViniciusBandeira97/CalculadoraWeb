@@ -9,6 +9,7 @@ function buttonClick(value){
         handleSymbol(value);
     }else {
         handleNumber(value);
+        console.log("Teclado númerico foi acionado!");
     }
     visor.innerText = buffer;
 }
@@ -28,13 +29,12 @@ function handleSymbol(symbol){
             flushOperation(parseInt(buffer));
             previousOperator = null;
             buffer = runningTotal;
+            console.log(`Resultado: ${runningTotal}`);
             runningTotal = 0;
             break;
         case '←':
             if(buffer.length === 1){
                 buffer = '0';
-                limpar = "Zerou buffer do Visor";
-                console.log(limpar);
             }else{
                 buffer = buffer.substring(0, buffer.length - 1);
             }
@@ -88,6 +88,7 @@ function flushOperation(intBuffer){
     }else if(previousOperator === '÷'){
         runningTotal /= intBuffer;
     }
+
 }
 
 function handleNumber(numberString){
