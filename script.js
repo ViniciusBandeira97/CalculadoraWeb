@@ -16,8 +16,10 @@ function buttonClick(value){
 function handleSymbol(symbol){
     switch(symbol){
         case 'C':
+            limparC = "Botão Limpar foi acionado"; 
             buffer = '0';
             runningTotal = 0;
+            console.log(limparC);
             break;
         case '=':
             if(previousOperator === null){
@@ -31,14 +33,30 @@ function handleSymbol(symbol){
         case '←':
             if(buffer.length === 1){
                 buffer = '0';
+                limpar = "Zerou buffer do Visor";
+                console.log(limpar);
             }else{
                 buffer = buffer.substring(0, buffer.length - 1);
             }
             break;
         case '÷':
+            divisao = "Divisão foi acionado e esta aguardando entrada do proximo número";
+            console.log(divisao);
+            handleMath(symbol);
+            break;
         case '×':
+            multiplicacao = "Multiplicação foi acionado e esta aguardando entrada do proximo número";
+            console.log(multiplicacao);
+            handleMath(symbol);
+            break;
         case '+':
+            adicao = "Adição foi acionado e esta aguardando entrada do proximo número";
+            console.log(adicao);
+            handleMath(symbol);
+            break;
         case '−':
+            subtracao = "Subtracao foi acionado e esta aguardando entrada do proximo número";
+            console.log(subtracao);
             handleMath(symbol);
             break;
     }
